@@ -7,58 +7,88 @@
     <title>Relatório Técnico</title>
 
     <style>
-        h1{
-            background-color: aqua;
+        #corpo{
+            background-color: lawngreen;
         }
+        
+        h1{
+            text-align: center;
+        }
+
+        label{
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .centralizar{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        #botoes{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        button:hover{
+            background-color: red;
+        }
+
     </style>
 </head>
 <body>
-    <header>
-        <h1>Bem-vindo à página de envio de relatório técnico!</h1>
-    </header>
-    <form action="https://formspree.io/f/mwkgvqej" method="POST">
-        <p>
-            <label>Identifique-se:</label><br>
-            <input type="text" placeholder="Nome" name="nome">
-            <input type="number" placeholder="ID" name="ID" required><br>
-            <label>Veículo:</label>
-            <select name="veiculo">
-                <option>Nenhum</option>
-                <option selected>Da empresa</option>
-                <option>Próprio</option>
-            </select>
-        </p>
-        <p>
-            <label>Empresa e equipamento onde trabalhou:</label><br>
-            <input type="text" placeholder="Nome da empresa" name="empresa" value="Mandirituba Assistência Técnica" required><br>
-            <input type="text" placeholder="Equipamento" name="equipamento" required>
-        </p>
-        <p>
-            <label>Onde estava quando recebeu o chamado?</label>
-            <ul>
-                <li><input type="radio" name="deslocamento" value="interno">Em atendimento interno</li>
-                <li><input type="radio" name="deslocamento" value="externo">Em atendimento externo</li>
-                <li><input type="radio" name="deslocamento" value="transito">Em trânsito</li>
-                <li><input type="radio" name="deslocamento" value="solicitante">Na empresa solicitante</li>
-            </ul>
-            
-        </p>
-        <p>
-            <label>Relatório do atendimento:</label><br>
-            <textarea placeholder="Digite seu relatório aqui" name="relatorio" cols="50" rows="10" required></textarea>
-        </p>
-        <p>
-            <label>Gastos extras:</label><br>
-            <ul>
-                <li><input type="checkbox" name="terceiro" value="extras">Terceiro</li>
-                <li><input type="checkbox" name="pecas" value="extras">Peças</li>
-                <li><input type="checkbox" name="hospedagem" value="extras">Hospedagem</li>
-                <li><input type="checkbox" name="outros" value="extras">Outros</li>
-                <textarea placeholder="Descreva os gastos extras" name="descricaoextras" cols="60" rows="10"></textarea>
-            </ul>
-        </p>
-        <button type="submit">Enviar</button><br><br><br>
-        <button type="reset">Limpar tudo</button>
-    </form>
+    <div id="corpo">
+        <header>
+            <h1>Bem-vindo à página de envio de relatório técnico!</h1>
+        </header>
+        <form id="formulario" action="https://formspree.io/f/mwkgvqej" method="POST">
+            <p class="centralizar">
+                <label class="labels">Identifique-se:</label><br>
+                <input type="text" placeholder="Nome" name="nome">
+                <input type="number" placeholder="ID" name="ID" required><br>
+                <label class="labels">Veículo:</label>
+                <select name="veiculo">
+                    <option>Nenhum</option>
+                    <option selected>Da empresa</option>
+                    <option>Próprio</option>
+                </select>
+            </p>
+            <p class="centralizar">
+                <label class="labels">Local do atendimento:</label><br>
+                <input type="text" placeholder="Nome da empresa" name="empresa" value="Mandirituba Assistência Técnica" required><br>
+                <input type="text" placeholder="Equipamento" name="equipamento" required>
+            </p>
+            <p class="centralizar">
+                <label class="labels">Onde estava quando recebeu o chamado?</label>
+                <ul class="centralizar">
+                    <li><input type="radio" name="deslocamento" value="interno">Em atendimento interno</li>
+                    <li><input type="radio" name="deslocamento" value="externo">Em atendimento externo</li>
+                    <li><input type="radio" name="deslocamento" value="transito">Em trânsito</li>
+                    <li><input type="radio" name="deslocamento" value="solicitante">Na empresa solicitante</li>
+                </ul>
+                
+            </p>
+            <p class="centralizar">
+                <label class="labels">Relatório do atendimento:</label><br>
+                <textarea placeholder="Digite seu relatório aqui" name="relatorio" cols="50" rows="10" required></textarea>
+            </p>
+            <p class="centralizar">
+                <label class="labels">Gastos extras:</label><br>
+                <ul class="centralizar">
+                    <li><input type="checkbox" name="terceiro" value="extras">Terceiro</li>
+                    <li><input type="checkbox" name="pecas" value="extras">Peças</li>
+                    <li><input type="checkbox" name="hospedagem" value="extras">Hospedagem</li>
+                    <li><input type="checkbox" name="outros" value="extras">Outros</li>
+                    <textarea placeholder="Descreva os gastos extras" name="descricaoextras" cols="45" rows="10"></textarea>
+                </ul>
+            </p>
+            <div id="botoes">
+                <button type="submit">Enviar</button><br><br><br>
+                <button type="reset">Limpar tudo</button>
+            </div>
+        </form>
+    </div>
 </body>
 </html>
